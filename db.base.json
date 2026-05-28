@@ -1,0 +1,42 @@
+{
+  "visitantes": [
+    {
+      "id": "VIS-001",
+      "nombre": "Ana Martinez",
+      "correo": "ana.martinez@example.com",
+      "telefono": "3001234567",
+      "interes": "Productos agricolas",
+      "comentario": "Deseo recibir informacion sobre el catalogo de productos.",
+      "fecha": "2026-05-01T09:00:00.000Z"
+    },
+    {
+      "id": "VIS-002",
+      "nombre": "Luis Gomez",
+      "correo": "luis.gomez@example.com",
+      "telefono": "3119876543",
+      "interes": "Talleres",
+      "comentario": "Estoy interesado en los talleres de agricultura sostenible.",
+      "fecha": "2026-05-02T10:30:00.000Z"
+    },
+    {
+      "id": "VIS-003",
+      "nombre": "Mariana Ruiz",
+      "correo": "mariana.ruiz@example.com",
+      "telefono": "3202223344",
+      "interes": "Voluntariado",
+      "comentario": "Quiero apoyar la feria rural digital.",
+      "fecha": "2026-05-03T14:15:00.000Z"
+    }
+  ],
+  "bugs": [
+    {
+      "id": "BUG-DEMO-001",
+      "titulo": "Ejemplo: campo telefono permite datos incompletos",
+      "area": "Validacion",
+      "prioridad": "Alta",
+      "estado": "Pendiente",
+      "descripcion": "Este es un ejemplo de registro de bug. El estudiante debe reemplazarlo por sus propios hallazgos.",
+      "evidencia": "evidencias/antes/telefono-incompleto.png"
+    }
+  ]
+}
