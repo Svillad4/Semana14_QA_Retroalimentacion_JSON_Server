@@ -42,6 +42,8 @@ async function loadVisitors() {
     render();
   } catch (error) {
     console.error(error);
+    state.visitors = [];
+    render();
     showError("No se pudo conectar con JSON Server. Revisa que npm run db este activo.");
   }
 }
@@ -68,10 +70,8 @@ async function handleSubmit(event) {
   try {
     await createVisitor(visitor);
     form.reset();
+    await loadVisitors();
     showSuccess("El visitante fue guardado en JSON Server.");
-
-    // RETO QA: verifica si la tabla se actualiza inmediatamente despues de guardar.
-    // Pista: si no se actualiza, revisa si hace falta cargar nuevamente los registros.
   } catch (error) {
     console.error(error);
     showError("No se pudo guardar el visitante. Revisa la conexion con la API local.");

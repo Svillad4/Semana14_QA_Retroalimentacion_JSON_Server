@@ -36,7 +36,7 @@ export function renderVisitorsTable(visitors, onDelete) {
         <td>${escapeHtml(visitor.interes)}</td>
         <td>${escapeHtml(visitor.telefono)}</td>
         <td>
-          <button class="btn btn-outline-danger btn-sm" data-delete-id="${visitor.id}">
+          <button class="btn btn-outline-danger btn-sm" data-delete-id="${visitor.id}" aria-label="Eliminar registro de ${escapeHtml(visitor.nombre)}">
             <i class="bi bi-trash"></i> Eliminar
           </button>
         </td>

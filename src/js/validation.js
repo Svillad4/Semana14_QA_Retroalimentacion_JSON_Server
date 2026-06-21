@@ -6,14 +6,15 @@ export function validateVisitor(data) {
   }
 
   // RETO QA: verifica si esta validacion de correo es suficientemente estricta.
-  if (!data.correo || !data.correo.includes("@")) {
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!data.correo || !emailPattern.test(data.correo)) {
     errors.correo = "Escribe un correo electronico valido.";
   }
 
   // RETO QA: revisa si la longitud esperada del telefono es adecuada para el caso colombiano.
   const onlyNumbers = data.telefono.replace(/\D/g, "");
-  if (!onlyNumbers || onlyNumbers.length < 7) {
-    errors.telefono = "El telefono debe tener suficientes digitos numericos.";
+  if (!onlyNumbers || onlyNumbers.length < 10) {
+    errors.telefono = "El telefono debe contener al menos 10 digitos numericos.";
   }
 
   if (!data.interes) {
@@ -32,7 +33,11 @@ export function validateVisitor(data) {
 }
 
 export function clearValidation(form) {
-  form.querySelectorAll(".is-invalid").forEach((input) => input.classList.remove("is-invalid"));
+  form.querySelectorAll(".is-invalid").forEach((input) => {
+    input.classList.remove("is-invalid");
+    input.removeAttribute("aria-invalid");
+  });
+
   form.querySelectorAll(".invalid-feedback").forEach((feedback) => {
     feedback.textContent = "";
   });
@@ -54,6 +59,7 @@ export function showValidationErrors(errors) {
 
     if (input && error) {
       input.classList.add("is-invalid");
+      input.setAttribute("aria-invalid", "true");
       error.textContent = message;
     }
   });

@@ -78,12 +78,13 @@ body {
 }
 
 /* RETO QA: este estado de foco podria mejorarse para navegacion con teclado. */
-button:focus,
-a:focus,
-input:focus,
-select:focus,
-textarea:focus {
-  outline: none;
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid rgba(255, 193, 7, 0.9);
+  outline-offset: 3px;
 }
 
 .empty-state {
